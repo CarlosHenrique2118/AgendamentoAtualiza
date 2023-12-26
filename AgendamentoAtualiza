@@ -1,0 +1,10 @@
+del C:\Atualiza\CloudUp\CloudUpCmd\AC\Atualizadores\AC\*.* /Q /S
+rmdir C:\Atualiza\CloudUp\CloudUpCmd\AC\Atualizadores\AC\AutenticaNFeWeb /S /Q
+rmdir C:\Atualiza\CloudUp\CloudUpCmd\AC\Atualizadores\AC\locales /S /Q
+rmdir C:\Atualiza\CloudUp\CloudUpCmd\AC\Atualizadores\AC\Logs /S /Q
+cd C:\Utils\AtualizadorNuvem
+robocopy C:\Utils\AtualizadorNuvem "C:\Atualiza\CloudUp\CloudUpCmd\AC\Atualizadores\AC" * /E
+del C:\Atualiza\CloudUp\CloudUpCmd\AC\*.txt
+start %windir%\system32\taskschd.msc
+
+; SCHTASKS /CHANGE /TN "Nome da tarefa" /RU "Nome do usuario" /ST "Horario do agendamento"  /RP "senha do usuário"
